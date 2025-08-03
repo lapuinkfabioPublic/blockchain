@@ -3,6 +3,7 @@ from flask import Flask, jsonify # type: ignore
 
 
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 Blockchain = Blockchain()
 
 
@@ -19,5 +20,13 @@ def mine_block():
         'timestamp': block['timestamp'],
         'proof': block['proof'],
         'previous_hash': block['previous_hash']
+    }
+    return jsonify(response), 200
+
+@app.route('/get_chain', methods=['GET'])
+def get_chain():
+    response = {
+        'chain': Blockchain.chain,
+        'length': len(Blockchain.chain)
     }
     return jsonify(response), 200
