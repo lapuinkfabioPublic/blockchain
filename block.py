@@ -2,6 +2,7 @@
 # 02/08/2025
 import hashlib
 import json
+import time
 from flask import Flask, jsonify # type: ignore
 
 
@@ -14,7 +15,8 @@ class Blockchain:
         block = {
             'index': len(self.chain) + 1,
             'proof': proof,
-            'previous_hash': previous_hash
+            'previous_hash': previous_hash,
+           'timestamp': time.time()  # Use current timestamp
         }
         self.chain.append(block)
         return block
