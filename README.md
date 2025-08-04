@@ -1,12 +1,13 @@
 🔗 Python Blockchain Implementation
 A minimal, educational blockchain implementation in Python using Flask. This project demonstrates core blockchain concepts like blocks, proof-of-work, hashing, and chain validation.
 
-bash
+
 ├── app.py               # Flask application & endpoints  
 ├── blockchain.py        # Core Blockchain class  
 └── README.md  
 🚀 Features
 ✅ Genesis block creation
+
 
 ⛏️ Proof-of-Work (PoW) mining
 
@@ -19,12 +20,12 @@ bash
 ⚙️ Installation
 Clone the repository:
 
-bash
+
 git clone https://github.com/yourusername/python-blockchain.git
 cd python-blockchain
+
 Install dependencies:
 
-bash
 pip install flask hashlib
 Run the Flask server:
 
@@ -54,10 +55,10 @@ Endpoint	Method	Description
 🧪 Testing
 Test the blockchain with:
 
-bash
 curl http://127.0.0.1:5000/mine   # Mine a block
 curl http://127.0.0.1:5000/chain  # View chain
 curl http://127.0.0.1:5000/valid  # Validate chain
+
 📌 Next Steps
 Add transactions
 
