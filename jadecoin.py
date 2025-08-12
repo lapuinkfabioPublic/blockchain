@@ -8,7 +8,7 @@ import requests
 from uuid import uuid4
 from urllib.parse import urlparse
 
-class Blockchain:
+class JadeBlockchain:
     def __init__(self):
         self.chain = []
         self.transactions = []
