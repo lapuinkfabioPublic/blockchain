@@ -1,5 +1,5 @@
 #Fabio Leandro Lapuinka
-from block import JadeBlockchain
+from  jadecoin import JadeBlockchain
 from flask import Flask, jsonify # type: ignore
 from uuid import uuid4
 from flask import request
