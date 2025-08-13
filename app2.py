@@ -2,6 +2,7 @@
 from block import JadeBlockchain
 from flask import Flask, jsonify # type: ignore
 from uuid import uuid4
+from flask import request
 
 
 app = Flask(__name__)
@@ -46,5 +47,15 @@ def is_valid():
     else:
         response = {'message': 'O blockchain não é válido.'}
     return jsonify(response), 200
+
+@app.route('/add_transaction', methods=['POST'])
+def add_transaction():
+    json = request.get_json()
+    transaction_keys = ['sender', 'receiver', 'amount']
+    if not all(key in json for key in transaction_keys):
+        return 'Algumas chaves estão faltando', 400
+    index = Blockchain.add_transaction(json['sender'], json['receiver'], json['amount'])
+    response = {'message': f'A transação será adicionada ao bloco {index}'}
+    return jsonify(response), 2010
 
 app.run(host='0.0.0.0', port=5000)  
